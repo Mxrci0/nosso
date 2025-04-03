@@ -8,7 +8,7 @@ function updateCounter() {
     const minutes = Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60));
     const seconds = Math.floor((timeDiff % (1000 * 60)) / 1000);
 
-    document.getElementById("counter").innerText = `${days}d ${hours}h ${minutes}m ${seconds}s desde 22/04/2024`;
+    document.getElementById("counter").innerText = `${days}d ${hours}h ${minutes}m ${seconds}s desde 22/04/2024💖`;
 }
 
 setInterval(updateCounter, 1000);
