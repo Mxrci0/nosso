@@ -32,10 +32,101 @@ body {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.foto img {
-    width: 250px;
-    height: auto;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
+
+/* Corpo */
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom, #98FB98, #A7C7E7);
+    color: #333;
+    padding-bottom: 100px;
+}
+
+/* Header */
+header {
+    background: #5D3FD3;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Navegação */
+nav {
+    background-color: #372b7c;
+    padding: 10px 0;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+}
+
+nav ul li {
+    display: inline-block;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Container principal */
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 40px;
+}
+
+/* Estilo da carta */
+.carta {
+    background: #5D3FD3;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    width: 45%;
+    min-width: 300px;
+}
+
+/* Estilo da foto */
+.foto img {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+/* Footer */
+footer {
+    background: #5D3FD3;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .carta, .foto img {
+        width: 90%;
+    }
+}
+
 
