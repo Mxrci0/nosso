@@ -277,3 +277,101 @@ footer {
     }
 }
 
+/* Estilos gerais */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    background: linear-gradient(to bottom, #aa9090);
+    color: white;
+}
+
+/* Header */
+header {
+    background: #5D3FD3;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Menu de navegação */
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    background: #444;
+    margin: 0;
+}
+
+nav ul li {
+    margin: 10px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    padding: 10px;
+}
+
+/* Container principal */
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Carta */
+.carta {
+    background: #5D3FD3;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(146, 36, 36, 0.1);
+    width: 50%;
+    min-width: 300px;
+    text-align: left;
+    margin: 10px;
+}
+
+/* Foto */
+.foto img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin: 10px;
+    width: 300px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .carta, .foto {
+        width: 90%;
+    }
+
+    nav ul {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    nav ul li {
+        margin: 5px 0;
+    }
+}
+
+/* Footer */
+footer {
+    background: #5c41ca;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    margin-top: 20px;
+}
