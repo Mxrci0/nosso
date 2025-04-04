@@ -3,15 +3,15 @@ body {
     margin: 0;
     padding: 0;
     text-align: center;
-    background: linear-gradient(to bottom, #000000, #222222);
+    background: linear-gradient(to bottom, #3f3d3d, #000000);
     color: white;
     font-family: Arial, sans-serif;
      
 }
 
 header {
-    background: #5D3FD3;
-    color: rgb(189, 180, 180);
+    background: #e43be4;
+    color: rgb(189, 66, 66);
     padding: 20px;
 }
 
@@ -51,7 +51,7 @@ body {
 }
 
 .container {
-    background: rgb(0, 0, 0);
+    background: rgb(17, 139, 196);
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(95, 66, 66, 0.1);
@@ -59,7 +59,7 @@ body {
 }
 
 h1 {
-    color: #333;
+    color: #000000;
 }
 body {
     font-family: Arial, sans-serif;
@@ -83,7 +83,7 @@ h1 {
 #counter {
     font-size: 24px;
     font-weight: bold;
-    color: #ff0000;
+    color: #030000;
 }
 body {
     font-family: Arial, sans-serif;
@@ -95,7 +95,7 @@ body {
     font-family: Arial, sans-serif;
 }
 .carta {
-    background: #5D3FD3;
+    background: #5e5097;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(2, 1, 1, 0.1);
@@ -190,14 +190,14 @@ h1 {
 /* Corpo */
 body {
     font-family: Arial, sans-serif;
-    background: linear-gradient(to bottom, #98FB98, #A7C7E7);
-    color: #333;
+    background: linear-gradient(to bottom, #7caa7c, #A7C7E7);
+    color: #c54141;
     padding-bottom: 100px;
 }
 
 /* Header */
 header {
-    background: #5D3FD3;
+    background: #4e4063;
     color: white;
     padding: 20px;
     text-align: center;
@@ -205,7 +205,7 @@ header {
 
 /* Navegação */
 nav {
-    background-color: #372b7c;
+    background-color: #b69eda;
     padding: 10px 0;
     text-align: center;
 }
@@ -220,7 +220,7 @@ nav ul li {
 }
 
 nav ul li a {
-    color: white;
+    color: rgb(173, 86, 86);
     text-decoration: none;
     font-weight: bold;
 }
@@ -237,7 +237,7 @@ nav ul li a {
 
 /* Estilo da carta */
 .carta {
-    background: #5D3FD3;
+    background: #cdb4f2;
     color: white;
     padding: 20px;
     border-radius: 10px;
@@ -256,7 +256,7 @@ nav ul li a {
 
 /* Footer */
 footer {
-    background: #5D3FD3;
+    background: #cdb4f2;
     color: white;
     text-align: center;
     padding: 20px;
@@ -301,7 +301,7 @@ nav ul {
     padding: 0;
     display: flex;
     justify-content: center;
-    background: #444;
+    background: #ffe0ec;
     margin: 0;
 }
 
@@ -327,7 +327,7 @@ nav ul li a {
 
 /* Carta */
 .carta {
-    background: #5D3FD3;
+    background: #c4b3ba;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(146, 36, 36, 0.1);
@@ -369,7 +369,7 @@ nav ul li a {
 
 /* Footer */
 footer {
-    background: #5c41ca;
+    background: #a8a2c2;
     color: white;
     padding: 10px;
     text-align: center;
@@ -384,7 +384,7 @@ footer {
   /* Fundo e texto geral */
   body {
     font-family: Arial, sans-serif;
-    background: linear-gradient(to bottom, #e6e6fa, #fce1ff); /* Lavanda e rosa pastel */
+    background: linear-gradient(to bottom, #ffe0ec, #fce1ff); /* Lavanda e rosa pastel */
     color: #333;
     min-height: 100vh;
     display: flex;
@@ -401,7 +401,7 @@ footer {
   
   /* Navegação */
   nav {
-    background-color: #a88bd2; /* Roxo mais escuro pastel */
+    background-color: #cdb4f2; /* Roxo mais escuro pastel */
     padding: 10px 0;
   }
   
@@ -422,12 +422,12 @@ footer {
     font-weight: bold;
     padding: 8px 12px;
     border-radius: 8px;
-    background-color: #d3c0f9;
+    background-color: #cdb4f2;
 
   }
   
   nav ul li a:hover {
-    background-color: #b89ce5;
+    background-color: #ad9ec5;
   }
   
   /* Conteúdo principal */
@@ -456,7 +456,7 @@ footer {
     min-width: 280px;
     max-width: 500px;
     text-align: left;
-    color: #4b3b59;
+    color: #c3bbca;
   }
   
   /* Centralizando a imagem */
@@ -498,7 +498,7 @@ footer {
   
   /* Rodapé */
   footer {
-    background: #a88bd2;
+    background: #cdb4f2;
     color: white;
     text-align: center;
     padding: 15px;
