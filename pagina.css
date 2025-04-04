@@ -1,0 +1,79 @@
+/* Estilo geral */
+body {
+    margin: 0;
+    padding: 0;
+    background: #fff0f5;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    overflow-x: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    position: relative;
+    text-align: center;
+  }
+  
+  /* Texto central */
+  .container h1 {
+    font-size: 3rem;
+    color: #c71585;
+    padding: 20px;
+  }
+  
+  /* Estilo dos corações */
+  .heart {
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    background-color: red;
+    transform: rotate(45deg);
+    animation: fall linear infinite;
+  }
+  
+  .heart::before,
+  .heart::after {
+    content: "";
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    background-color: red;
+    border-radius: 50%;
+  }
+  
+  .heart::before {
+    top: -12px;
+    left: 0;
+  }
+  
+  .heart::after {
+    left: -12px;
+    top: 0;
+  }
+  
+  /* Animação dos corações */
+  @keyframes fall {
+    0% {
+      top: -50px;
+      opacity: 1;
+    }
+    100% {
+      top: 100vh;
+      opacity: 0;
+    }
+  }
+  
+  /* Responsividade */
+  @media (max-width: 768px) {
+    .container h1 {
+      font-size: 2rem;
+      padding: 10px;
+    }
+  
+    .heart,
+    .heart::before,
+    .heart::after {
+      width: 18px;
+      height: 18px;
+    }
+  }
+  
