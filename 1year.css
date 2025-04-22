@@ -606,5 +606,42 @@ footer {
       left: 0;
     }
   }
-  
-  
+  .event.full {
+    background: linear-gradient(to right, #ffe6f0, #fff0f5);
+    border: 2px solid #a88bd2;
+    padding: 20px;
+    margin: 40px auto;
+    text-align: center;
+    border-radius: 25px;
+    box-shadow: 0 0 15px rgba(255, 182, 193, 0.4);
+    max-width: 800px;
+    animation: fadeIn 2s ease-in-out;
+    font-family: 'Georgia', serif;
+    color: #a88bd2#b30059;
+}
+
+.event.full h2 {
+    font-size: 2em;
+    margin-bottom: 10px;
+    color: #a88bd2;
+}
+
+.event.full p {
+    font-size: 1.2em;
+    line-height: 1.6;
+    color: #a88bd2;
+    margin-top: 10px;
+}
+
+/* Animação suave ao aparecer */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
