@@ -11,14 +11,17 @@
 <body>
     
     <header>
-        <h1><a href="Pagina-surpresa.html">1</a>  Ano de Nós, e <a href="carta1.html">Contando</a>...</h1>
+        <h1><a href="Pagina-surpresa.html">Nossos</a> Anos de Nós, e <a href="carta1.html">Contando</a>...</h1>
     </header>
     
     <nav>
         <ul>
-            <li><a href="index.html">Início</a></li>
+            <li><a href="index.html" aria-current="page">Início</a></li>
             <li><a href="sobre.html">Sobre nós</a></li>
             <li><a href="momentos.html">Nossos momentos</a></li>
+            <li><a href="Pagina-surpresa.html">Surpresa</a></li>
+            <li><a href="carta1.html">Carta</a></li>
+            <li><a href="eu-te-amo.html">Eu te amo</a></li>
         </ul>
     </nav>
     
@@ -26,12 +29,47 @@
         <section>
             <h2>Obrigado minha Vida</h2>
             <p>Só quero que você se sinta amada ^^</p>
+            <a class="love-page-button" href="eu-te-amo.html">Ver "Eu te amo" em varias linguas</a>
         </section>
         
-        <div class="container">
+        <div class="container counter-card">
             <h1>Nosso Relacionamento</h1>
-            <p>Estamos juntos há:</p>
-            <p id="counter">Calculando...</p>
+            <p class="counter-lead">Estamos juntos há:</p>
+
+            <div class="counter-grid" aria-label="Contador de tempo juntos">
+                <div class="counter-item">
+                    <span id="counterDays" class="counter-value">0</span>
+                    <span class="counter-label">dias</span>
+                </div>
+                <div class="counter-item">
+                    <span id="counterHours" class="counter-value">0</span>
+                    <span class="counter-label">horas</span>
+                </div>
+                <div class="counter-item">
+                    <span id="counterMinutes" class="counter-value">0</span>
+                    <span class="counter-label">minutos</span>
+                </div>
+                <div class="counter-item">
+                    <span id="counterSeconds" class="counter-value">0</span>
+                    <span class="counter-label">segundos</span>
+                </div>
+            </div>
+
+            <p id="counterTotal" class="counter-total">Calculando detalhes...</p>
+
+            <div class="counter-progress-block" aria-label="Progresso até 3 anos">
+                <div class="counter-progress-head">
+                    <span id="counterProgressTitle" class="counter-progress-title">Rumo aos 2 anos</span>
+                    <span id="counterProgressPercent" class="counter-progress-percent">0%</span>
+                </div>
+                <div class="counter-progress-track">
+                    <div id="counterProgressBar" class="counter-progress-bar"></div>
+                </div>
+                <p id="counterProgressText" class="counter-progress-text">Calculando progresso...</p>
+            </div>
+
+            <p id="counter" class="counter-legacy">Calculando...</p>
+            <p class="counter-since">Desde 22/04/2024</p>
         </div>
     </main>
 

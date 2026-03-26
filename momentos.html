@@ -10,20 +10,26 @@
 </head>
 <body>
     <header>
-        <h1><a href="Pagina-surpresa.html">1</a> Ano de Nós, e <a href="carta1.html">Contando</a>...</h1>
+        <h1><a href="Pagina-surpresa.html">Nossos</a> Anos de Nós, e <a href="carta1.html">Contando</a>...</h1>
     </header>
 
     <nav>
         <ul>
             <li><a href="index.html">Início</a></li>
             <li><a href="sobre.html">Sobre nós</a></li>
-            <li><a href="momentos.html">Nossos momentos</a></li>
+            <li><a href="momentos.html" aria-current="page">Nossos momentos</a></li>
+            <li><a href="Pagina-surpresa.html">Surpresa</a></li>
+            <li><a href="carta1.html">Carta</a></li>
+            <li><a href="eu-te-amo.html">Eu te amo</a></li>
         </ul>
     </nav>
 
     <div class="container">
         <h1>Nossos momentos</h1>
-        <div class="timeline">
+        <div class="timeline timeline-carousel" id="timelineCarousel">
+            <button class="carousel-btn prev" type="button" aria-label="Foto anterior">&#10094;</button>
+            <div class="timeline-window">
+                <div class="timeline-slides">
             <!-- Momentos originais -->
             <div class="event left">
                 <img src="primeiro.jpeg" alt="Melhor Momento 1">
@@ -99,16 +105,26 @@
                 <img src="mulher.jpg" alt="Melhor Momento 18">
                 <p>"A minha foto preferida ao lado da minha pessoa preferida 20/04/25."</p>
             </div>
-
-            <!-- Mensagem final -->
-            <div class="event full">
-                <h2>Você não é do meu mundo. Você é o meu mundo. 💌</h2>
-                <p>Obrigado por ser essa mulher incrível e linda que você é. Você é a minha pessoa preferida e mais importante do mundo. Eu te amo demais. Você é feita da mesma matéria que as estrelas: radiante na minha vida. Obrigado por tudo, Geovanna. Ou melhor, minha princesa, mo, amor, vida... ❤️</p>
+                </div>
             </div>
+            <button class="carousel-btn next" type="button" aria-label="Próxima foto">&#10095;</button>
+            <div class="carousel-controls">
+                <div class="carousel-status" aria-live="polite">
+                    <span id="carouselCounter">1 / 18</span>
+                </div>
+                <button id="autoplayToggle" class="autoplay-toggle" type="button" aria-pressed="false">Auto play: desligado</button>
+            </div>
+        </div>
+
+        <!-- Mensagem final -->
+        <div class="event full">
+            <h2>Você não é do meu mundo. Você é o meu mundo. 💌</h2>
+            <p>Obrigado por ser essa mulher incrível e linda que você é. Você é a minha pessoa preferida e mais importante do mundo. Eu te amo demais. Você é feita da mesma matéria que as estrelas: radiante na minha vida. Obrigado por tudo, Geovanna. Ou melhor, minha princesa, mo, amor, vida... ❤️</p>
         </div>
     </div>
 
     <script src="1year.js"></script>
+    <script src="momentos.js"></script>
 
     <footer>
         <p>&copy; Para Geovanna^^</p>
