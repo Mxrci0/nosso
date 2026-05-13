@@ -1,48 +1,201 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nosso Amor</title>
-    <link rel="icon" href="coracao.png" type="image/png">
-    <link rel="stylesheet" href="1year.css">
-    <link rel="stylesheet" href="pagina-carta.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Surpresa 💖 — Nosso Amor</title>
+  <link rel="icon" href="coracao.png" type="image/png">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .surpresa-wrap {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 4rem 1.5rem 5rem;
+    }
+    .surpresa-header {
+      text-align: center;
+      margin-bottom: 3.5rem;
+    }
+
+    .surpresa-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+    }
+    @media (max-width: 600px){
+      .surpresa-grid { grid-template-columns: 1fr; }
+    }
+
+    .surpresa-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 28px;
+      box-shadow: 0 16px 48px var(--shadow);
+      overflow: hidden;
+      position: relative;
+      transition: transform 0.35s, box-shadow 0.35s;
+    }
+    .surpresa-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 28px 64px var(--shadow);
+    }
+    .surpresa-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--rose), var(--gold));
+      z-index: 1;
+    }
+
+    .surpresa-badge {
+      position: absolute;
+      top: 1.2rem;
+      left: 1.2rem;
+      z-index: 2;
+      background: linear-gradient(135deg, var(--deep-rose), var(--rose));
+      color: #fff;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 0.4rem 0.9rem;
+      border-radius: 99px;
+      box-shadow: 0 4px 12px rgba(192,57,79,0.4);
+    }
+
+    .surpresa-img {
+      width: 100%;
+      aspect-ratio: 4/3;
+      object-fit: cover;
+      display: block;
+    }
+
+    .surpresa-body {
+      padding: 1.8rem 1.6rem;
+      text-align: center;
+    }
+    .surpresa-body h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem;
+      color: var(--dark);
+      margin-bottom: 0.5rem;
+    }
+    .surpresa-body p {
+      color: var(--soft);
+      font-size: 0.9rem;
+      line-height: 1.7;
+    }
+
+    /* confetti strip */
+    .confetti-strip {
+      margin-top: 3rem;
+      text-align: center;
+      padding: 2.5rem 2rem;
+      background: linear-gradient(135deg, var(--rose), var(--deep-rose));
+      border-radius: 20px;
+      color: #fff;
+      position: relative;
+      overflow: hidden;
+    }
+    .confetti-strip h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.1rem, 3vw, 1.8rem);
+      font-style: italic;
+      margin-bottom: 0.7rem;
+    }
+    .confetti-strip p {
+      font-size: 0.9rem;
+      opacity: 0.85;
+      line-height: 1.7;
+      max-width: 520px;
+      margin: 0 auto;
+    }
+
+    /* falling confetti hearts */
+    .confetti-hearts span {
+      position: absolute;
+      font-size: 1.4rem;
+      animation: fallHeart var(--d) ease-in var(--dl) infinite;
+      opacity: 0;
+    }
+    @keyframes fallHeart {
+      0%   { opacity: 0; transform: translateY(-20px) rotate(var(--r)); }
+      15%  { opacity: 0.7; }
+      100% { opacity: 0; transform: translateY(120px) rotate(calc(var(--r) + 60deg)); }
+    }
+  </style>
 </head>
 <body>
-    
-    <header>
-        <h1><a href="Pagina-surpresa.html">Nossos</a> Anos de Nós, e <a href="carta1.html">Contando</a>...</h1>
-    </header>
-    
-    <nav>
-        <ul>
-            <li><a href="index.html">Início</a></li>
-            <li><a href="sobre.html">Sobre nós</a></li>
-            <li><a href="momentos.html">Nossos momentos</a></li>
-            <li><a href="Pagina-surpresa.html" aria-current="page">Surpresa</a></li>
-            <li><a href="carta1.html">Carta</a></li>
-            <li><a href="eu-te-amo.html">Eu te amo</a></li>
-        </ul>
-    </nav>
 
-    <div class="container surpresa-container">
-        <article class="surpresa-card">
-            <p class="surpresa-ordem">1º ano</p>
-            <h1>💖 Feliz nosso primeiro ano 💖</h1>
-            <img class="surpresa-img" src="praia.jpg" alt="Foto da praia no primeiro ano">
-        </article>
+<header>
+  <h1><a href="Pagina-surpresa.html">Nossos</a> Anos de Nós, e <a href="carta1.html">Contando</a>...</h1>
+</header>
 
-        <article class="surpresa-card">
-            <p class="surpresa-ordem">2º ano</p>
-            <h1>💖 Feliz nosso segundo ano 💖</h1>
-            <img class="surpresa-img" src="02.jpeg" alt="Foto especial do segundo ano">
-        </article>
+<nav>
+  <ul>
+    <li><a href="index.html">Início</a></li>
+    <li><a href="sobre.html">Sobre nós</a></li>
+    <li><a href="nossa_historia.html">Nossa história</a></li>
+    <li><a href="momentos.html">Nossos momentos</a></li>
+    <li><a href="Pagina-surpresa.html" aria-current="page">Surpresa</a></li>
+    <li><a href="carta1.html">Carta</a></li>
+    <li><a href="eu-te-amo.html">Eu te amo</a></li>
+  </ul>
+</nav>
+
+<main class="page-content">
+  <div class="surpresa-wrap">
+
+    <div class="surpresa-header fade-up">
+      <p class="section-label">celebrando cada ano</p>
+      <h2 class="section-title">Nossos aniversários<br>de amor 🎉</h2>
     </div>
 
-  <script src="1year.js"></script>
-  <footer>
-    <p>&copy; Para Geovanna^^</p>
-</footer>
-</body>
+    <div class="surpresa-grid">
+      <article class="surpresa-card fade-up-1">
+        <span class="surpresa-badge">1º ano</span>
+        <img class="surpresa-img" src="praia.jpg" alt="Foto do primeiro aniversário">
+        <div class="surpresa-body">
+          <h2>💖 Feliz nosso primeiro ano 💖</h2>
+          <p>365 dias, 525.600 minutos de te amar. O primeiro ano de muitos que vêm por aí.</p>
+        </div>
+      </article>
 
+      <article class="surpresa-card fade-up-2">
+        <span class="surpresa-badge">2º ano</span>
+        <img class="surpresa-img" src="02.jpeg" alt="Foto do segundo aniversário">
+        <div class="surpresa-body">
+          <h2>💖 Feliz nosso segundo ano 💖</h2>
+          <p>730 dias ao seu lado — cada um mais bonito que o anterior. Que venham muitos mais.</p>
+        </div>
+      </article>
+    </div>
+
+    <div class="confetti-strip fade-up-3">
+      <div class="confetti-hearts" id="ch"></div>
+      <h3>Cada ano com você é um presente. ❤️</h3>
+      <p>Obrigado por cada amanhecer, cada risada, cada abraço. Você faz tudo valer a pena, Geovanna. Eu te amo demais — hoje, amanhã e sempre.</p>
+    </div>
+
+  </div>
+</main>
+
+<footer>
+  <p>&copy; Para <strong>Geovanna</strong>^^</p>
+</footer>
+
+<script>
+// confetti hearts inside strip
+const ch = document.getElementById('ch');
+['❤️','💖','🌹','💕','✨'].forEach((em, i)=>{
+  for(let j=0; j<4; j++){
+    const s = document.createElement('span');
+    s.textContent = em;
+    s.style.cssText = `left:${10+j*22}%;top:0;--d:${2+Math.random()*2}s;--dl:${i*0.4+j*0.3}s;--r:${Math.random()*30-15}deg`;
+    ch.appendChild(s);
+  }
+});
+</script>
+</body>
 </html>

@@ -1,113 +1,266 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eu Te Amo Em Muitas Linguas</title>
-    <link rel="icon" href="coracao.png" type="image/png">
-    <link rel="stylesheet" href="1year.css">
-    <link rel="stylesheet" href="pagina-carta.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Eu Te Amo 💖 — Nosso Amor</title>
+  <link rel="icon" href="coracao.png" type="image/png">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .love-wrap {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 4rem 1.5rem 5rem;
+    }
+    .love-header {
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+    .love-intro {
+      text-align: center;
+      color: var(--soft);
+      font-size: 1rem;
+      max-width: 520px;
+      margin: 0 auto 3rem;
+      line-height: 1.7;
+    }
+
+    /* search bar */
+    .search-wrap {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 2.5rem;
+    }
+    .search-input {
+      width: 100%;
+      max-width: 380px;
+      padding: 0.75rem 1.2rem;
+      border: 2px solid var(--border);
+      border-radius: 99px;
+      background: rgba(255,255,255,0.8);
+      font-family: 'Lato', sans-serif;
+      font-size: 0.9rem;
+      color: var(--dark);
+      outline: none;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .search-input::placeholder { color: #c8aab5; }
+    .search-input:focus {
+      border-color: var(--rose);
+      box-shadow: 0 0 0 3px rgba(232,98,122,0.15);
+    }
+
+    /* grid */
+    .love-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+      gap: 1rem;
+    }
+
+    .love-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 1.2rem 1rem;
+      text-align: center;
+      box-shadow: 0 6px 20px var(--shadow);
+      transition: transform 0.25s, box-shadow 0.25s;
+      position: relative;
+      overflow: hidden;
+      cursor: default;
+    }
+    .love-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--rose), var(--gold));
+    }
+    .love-card:hover {
+      transform: translateY(-4px) scale(1.02);
+      box-shadow: 0 14px 36px var(--shadow);
+    }
+    .love-card h2 {
+      font-family: 'Lato', sans-serif;
+      font-weight: 700;
+      font-size: 0.7rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.5rem;
+    }
+    .love-card p {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.05rem;
+      color: var(--dark);
+      font-style: italic;
+      line-height: 1.4;
+    }
+
+    .love-card.hidden { display: none; }
+
+    /* counter badge */
+    .count-badge {
+      text-align: center;
+      margin-bottom: 2rem;
+      font-size: 0.8rem;
+      color: var(--soft);
+      letter-spacing: 0.1em;
+    }
+    .count-badge strong { color: var(--rose); }
+  </style>
 </head>
 <body>
-    <header>
-        <h1><a href="Pagina-surpresa.html">Nossos</a> Anos de Nos, e <a href="carta1.html">Contando</a>...</h1>
-    </header>
 
-    <nav>
-        <ul>
-            <li><a href="index.html">Início</a></li>
-            <li><a href="sobre.html">Sobre nós</a></li>
-            <li><a href="momentos.html">Nossos momentos</a></li>
-            <li><a href="Pagina-surpresa.html">Surpresa</a></li>
-            <li><a href="carta1.html">Carta</a></li>
-            <li><a href="eu-te-amo.html" aria-current="page">Eu te amo</a></li>
-        </ul>
-    </nav>
+<header>
+  <h1><a href="Pagina-surpresa.html">Nossos</a> Anos de Nós, e <a href="carta1.html">Contando</a>...</h1>
+</header>
 
-    <main>
-        <section class="container love-page">
-            <h1>"Eu te amo" em muitas linguas</h1>
-            <p class="love-intro">Um cantinho com jeitos diferentes de dizer a mesma coisa mais importante: eu te amo.</p>
+<nav>
+  <ul>
+    <li><a href="index.html">Início</a></li>
+    <li><a href="sobre.html">Sobre nós</a></li>
+    <li><a href="nossa_historia.html">Nossa história</a></li>
+    <li><a href="momentos.html">Nossos momentos</a></li>
+    <li><a href="Pagina-surpresa.html">Surpresa</a></li>
+    <li><a href="carta1.html">Carta</a></li>
+    <li><a href="eu-te-amo.html" aria-current="page">Eu te amo</a></li>
+  </ul>
+</nav>
 
-            <div class="love-grid">
-                <article class="love-card"><h2>Portugues</h2><p>Eu te amo</p></article>
-                <article class="love-card"><h2>Ingles</h2><p>I love you</p></article>
-                <article class="love-card"><h2>Espanhol</h2><p>Te amo</p></article>
-                <article class="love-card"><h2>Frances</h2><p>Je t'aime</p></article>
-                <article class="love-card"><h2>Italiano</h2><p>Ti amo</p></article>
-                <article class="love-card"><h2>Alemao</h2><p>Ich liebe dich</p></article>
-                <article class="love-card"><h2>Holandes</h2><p>Ik hou van jou</p></article>
-                <article class="love-card"><h2>Sueco</h2><p>Jag alskar dig</p></article>
-                <article class="love-card"><h2>Noruegues</h2><p>Jeg elsker deg</p></article>
-                <article class="love-card"><h2>Dinamarques</h2><p>Jeg elsker dig</p></article>
-                <article class="love-card"><h2>Finlandes</h2><p>Mina rakastan sinua</p></article>
-                <article class="love-card"><h2>Islandes</h2><p>Eg elska thig</p></article>
-                <article class="love-card"><h2>Irlandes</h2><p>Ta gra agam duit</p></article>
-                <article class="love-card"><h2>Gales</h2><p>Rwy'n dy garu di</p></article>
-                <article class="love-card"><h2>Basco</h2><p>Maite zaitut</p></article>
-                <article class="love-card"><h2>Catalao</h2><p>T'estimo</p></article>
-                <article class="love-card"><h2>Romeno</h2><p>Te iubesc</p></article>
-                <article class="love-card"><h2>Polones</h2><p>Kocham cie</p></article>
-                <article class="love-card"><h2>Tcheco</h2><p>Miluji te</p></article>
-                <article class="love-card"><h2>Eslovaco</h2><p>L'ubim ta</p></article>
-                <article class="love-card"><h2>Esloveno</h2><p>Ljubim te</p></article>
-                <article class="love-card"><h2>Croata</h2><p>Volim te</p></article>
-                <article class="love-card"><h2>Servio</h2><p>Volim te</p></article>
-                <article class="love-card"><h2>Bulgaro</h2><p>Obicham te</p></article>
-                <article class="love-card"><h2>Albanes</h2><p>Te dua</p></article>
-                <article class="love-card"><h2>Grego</h2><p>S'agapo</p></article>
-                <article class="love-card"><h2>Russo</h2><p>Ya tebya lyublyu</p></article>
-                <article class="love-card"><h2>Ucraniano</h2><p>Ya tebe kokhayu</p></article>
-                <article class="love-card"><h2>Turco</h2><p>Seni seviyorum</p></article>
-                <article class="love-card"><h2>Arabe</h2><p>Ana uhibbuka / uhibbuki</p></article>
-                <article class="love-card"><h2>Hebraico</h2><p>Ani ohev otach / ani ohevet otcha</p></article>
-                <article class="love-card"><h2>Persa</h2><p>Dooset daram</p></article>
-                <article class="love-card"><h2>Hindi</h2><p>Main tumse pyaar karta/karti hun</p></article>
-                <article class="love-card"><h2>Urdu</h2><p>Main tum se mohabbat karta/karti hun</p></article>
-                <article class="love-card"><h2>Bengali</h2><p>Ami tomay bhalobashi</p></article>
-                <article class="love-card"><h2>Punjabi</h2><p>Main tainu pyar karda/kardi haan</p></article>
-                <article class="love-card"><h2>Gujarati</h2><p>Hu tane prem karu chhu</p></article>
-                <article class="love-card"><h2>Marathi</h2><p>Mi tuzyavar prem karto/karte</p></article>
-                <article class="love-card"><h2>Tamil</h2><p>Naan unnai kathalikiren</p></article>
-                <article class="love-card"><h2>Telugu</h2><p>Nenu ninnu premistunnanu</p></article>
-                <article class="love-card"><h2>Kannada</h2><p>Naanu ninnannu preetisuttene</p></article>
-                <article class="love-card"><h2>Malayalam</h2><p>Njan ninne snehikkunnu</p></article>
-                <article class="love-card"><h2>Nepales</h2><p>Ma timilai maya garchu</p></article>
-                <article class="love-card"><h2>Tailandes</h2><p>Chan rak khun</p></article>
-                <article class="love-card"><h2>Vietnamita</h2><p>Anh yeu em / Em yeu anh</p></article>
-                <article class="love-card"><h2>Indonesio</h2><p>Aku cinta kamu</p></article>
-                <article class="love-card"><h2>Malaio</h2><p>Saya cintakan awak</p></article>
-                <article class="love-card"><h2>Tagalog</h2><p>Mahal kita</p></article>
-                <article class="love-card"><h2>Chines (simplificado)</h2><p>Wo ai ni</p></article>
-                <article class="love-card"><h2>Chines (tradicional)</h2><p>Ngo oi nei</p></article>
-                <article class="love-card"><h2>Japones</h2><p>Aishiteru</p></article>
-                <article class="love-card"><h2>Coreano</h2><p>Saranghae</p></article>
-                <article class="love-card"><h2>Mongol</h2><p>Bi chamd khairtai</p></article>
-                <article class="love-card"><h2>Georgiano</h2><p>Me shen miqvarkhar</p></article>
-                <article class="love-card"><h2>Armenio</h2><p>Yes kez sirum em</p></article>
-                <article class="love-card"><h2>Cazaque</h2><p>Men seni suyemin</p></article>
-                <article class="love-card"><h2>Uzbeque</h2><p>Men seni sevaman</p></article>
-                <article class="love-card"><h2>Suaile</h2><p>Nakupenda</p></article>
-                <article class="love-card"><h2>Zulu</h2><p>Ngiyakuthanda</p></article>
-                <article class="love-card"><h2>Xhosa</h2><p>Ndiyakuthanda</p></article>
-                <article class="love-card"><h2>Yoruba</h2><p>Mo nife re</p></article>
-                <article class="love-card"><h2>Hausa</h2><p>Ina son ka/ki</p></article>
-                <article class="love-card"><h2>Somali</h2><p>Waan ku jeclahay</p></article>
-                <article class="love-card"><h2>Malgaxe</h2><p>Tiako ianao</p></article>
-                <article class="love-card"><h2>Esperanto</h2><p>Mi amas vin</p></article>
-                <article class="love-card"><h2>Latim</h2><p>Te amo</p></article>
-                <article class="love-card"><h2>Maori</h2><p>Aroha ahau ki a koe</p></article>
-                <article class="love-card"><h2>Havaiano</h2><p>Aloha wau ia oe</p></article>
-                <article class="love-card"><h2>Samoano</h2><p>Ou te alofa ia te oe</p></article>
-                <article class="love-card"><h2>Taitiano</h2><p>Ua here vau ia oe</p></article>
-                <article class="love-card"><h2>Fijiano</h2><p>Au domoni iko</p></article>
-            </div>
-        </section>
-    </main>
+<main class="page-content">
+  <div class="love-wrap">
 
-    <script src="1year.js"></script>
-    <footer>
-        <p>&copy; Para Geovanna^^</p>
-    </footer>
+    <div class="love-header fade-up">
+      <p class="section-label">em todos os idiomas</p>
+      <h2 class="section-title">"Eu te amo"<br>ao redor do mundo 🌍</h2>
+    </div>
+    <p class="love-intro fade-up-1">
+      Um cantinho com jeitos diferentes de dizer a mesma coisa mais importante:<br><strong style="color:var(--rose)">eu te amo.</strong>
+    </p>
+
+    <div class="search-wrap fade-up-2">
+      <input class="search-input" type="search" id="searchInput" placeholder="Buscar língua ou frase..." aria-label="Buscar idioma">
+    </div>
+
+    <p class="count-badge fade-up-2"><strong id="visibleCount">72</strong> formas de te amar</p>
+
+    <div class="love-grid" id="loveGrid">
+      <article class="love-card"><h2>Português</h2><p>Eu te amo</p></article>
+      <article class="love-card"><h2>Inglês</h2><p>I love you</p></article>
+      <article class="love-card"><h2>Espanhol</h2><p>Te amo</p></article>
+      <article class="love-card"><h2>Francês</h2><p>Je t'aime</p></article>
+      <article class="love-card"><h2>Italiano</h2><p>Ti amo</p></article>
+      <article class="love-card"><h2>Alemão</h2><p>Ich liebe dich</p></article>
+      <article class="love-card"><h2>Holandês</h2><p>Ik hou van jou</p></article>
+      <article class="love-card"><h2>Sueco</h2><p>Jag älskar dig</p></article>
+      <article class="love-card"><h2>Norueguês</h2><p>Jeg elsker deg</p></article>
+      <article class="love-card"><h2>Dinamarquês</h2><p>Jeg elsker dig</p></article>
+      <article class="love-card"><h2>Finlandês</h2><p>Minä rakastan sinua</p></article>
+      <article class="love-card"><h2>Islandês</h2><p>Ég elska þig</p></article>
+      <article class="love-card"><h2>Irlandês</h2><p>Tá grá agam duit</p></article>
+      <article class="love-card"><h2>Galês</h2><p>Rwy'n dy garu di</p></article>
+      <article class="love-card"><h2>Basco</h2><p>Maite zaitut</p></article>
+      <article class="love-card"><h2>Catalão</h2><p>T'estimo</p></article>
+      <article class="love-card"><h2>Romeno</h2><p>Te iubesc</p></article>
+      <article class="love-card"><h2>Polonês</h2><p>Kocham cię</p></article>
+      <article class="love-card"><h2>Tcheco</h2><p>Miluji tě</p></article>
+      <article class="love-card"><h2>Eslovaco</h2><p>Ľúbim ťa</p></article>
+      <article class="love-card"><h2>Esloveno</h2><p>Ljubim te</p></article>
+      <article class="love-card"><h2>Croata</h2><p>Volim te</p></article>
+      <article class="love-card"><h2>Sérvio</h2><p>Volim te</p></article>
+      <article class="love-card"><h2>Búlgaro</h2><p>Обичам те</p></article>
+      <article class="love-card"><h2>Albanês</h2><p>Te dua</p></article>
+      <article class="love-card"><h2>Grego</h2><p>Σ'αγαπώ</p></article>
+      <article class="love-card"><h2>Russo</h2><p>Я тебя люблю</p></article>
+      <article class="love-card"><h2>Ucraniano</h2><p>Я тебе кохаю</p></article>
+      <article class="love-card"><h2>Turco</h2><p>Seni seviyorum</p></article>
+      <article class="love-card"><h2>Árabe</h2><p>أنا أحبك</p></article>
+      <article class="love-card"><h2>Hebraico</h2><p>אני אוהב אותך</p></article>
+      <article class="love-card"><h2>Persa</h2><p>دوستت دارم</p></article>
+      <article class="love-card"><h2>Hindi</h2><p>मैं तुमसे प्यार करता हूँ</p></article>
+      <article class="love-card"><h2>Urdu</h2><p>میں تم سے محبت کرتا ہوں</p></article>
+      <article class="love-card"><h2>Bengali</h2><p>আমি তোমাকে ভালোবাসি</p></article>
+      <article class="love-card"><h2>Punjabi</h2><p>ਮੈਂ ਤੈਨੂੰ ਪਿਆਰ ਕਰਦਾ ਹਾਂ</p></article>
+      <article class="love-card"><h2>Gujarati</h2><p>હું તને પ્રેમ કરું છું</p></article>
+      <article class="love-card"><h2>Marathi</h2><p>मी तुझ्यावर प्रेम करतो</p></article>
+      <article class="love-card"><h2>Tamil</h2><p>நான் உன்னை காதலிக்கிறேன்</p></article>
+      <article class="love-card"><h2>Telugu</h2><p>నేను నిన్ను ప్రేమిస్తున్నాను</p></article>
+      <article class="love-card"><h2>Kannada</h2><p>ನಾನು ನಿನ್ನನ್ನು ಪ್ರೀತಿಸುತ್ತೇನೆ</p></article>
+      <article class="love-card"><h2>Malayalam</h2><p>ഞാൻ നിന്നെ സ്നേഹിക്കുന്നു</p></article>
+      <article class="love-card"><h2>Nepalês</h2><p>म तिमीलाई माया गर्छु</p></article>
+      <article class="love-card"><h2>Tailandês</h2><p>ฉันรักคุณ</p></article>
+      <article class="love-card"><h2>Vietnamita</h2><p>Anh yêu em</p></article>
+      <article class="love-card"><h2>Indonésio</h2><p>Aku cinta kamu</p></article>
+      <article class="love-card"><h2>Malaio</h2><p>Saya cintakan awak</p></article>
+      <article class="love-card"><h2>Tagalog</h2><p>Mahal kita</p></article>
+      <article class="love-card"><h2>Chinês (simpl.)</h2><p>我爱你</p></article>
+      <article class="love-card"><h2>Chinês (trad.)</h2><p>我愛你</p></article>
+      <article class="love-card"><h2>Japonês</h2><p>愛してる</p></article>
+      <article class="love-card"><h2>Coreano</h2><p>사랑해</p></article>
+      <article class="love-card"><h2>Mongol</h2><p>Би чамд хайртай</p></article>
+      <article class="love-card"><h2>Georgiano</h2><p>მე შენ მიყვარხარ</p></article>
+      <article class="love-card"><h2>Armênio</h2><p>Ես քեզ սիրում եմ</p></article>
+      <article class="love-card"><h2>Cazaque</h2><p>Мен сені сүйемін</p></article>
+      <article class="love-card"><h2>Uzbeque</h2><p>Men seni sevaman</p></article>
+      <article class="love-card"><h2>Suaíli</h2><p>Nakupenda</p></article>
+      <article class="love-card"><h2>Zulu</h2><p>Ngiyakuthanda</p></article>
+      <article class="love-card"><h2>Xhosa</h2><p>Ndiyakuthanda</p></article>
+      <article class="love-card"><h2>Yoruba</h2><p>Mo nifẹ rẹ</p></article>
+      <article class="love-card"><h2>Hausa</h2><p>Ina son ki</p></article>
+      <article class="love-card"><h2>Somali</h2><p>Waan ku jeclahay</p></article>
+      <article class="love-card"><h2>Malgaxe</h2><p>Tiako ianao</p></article>
+      <article class="love-card"><h2>Esperanto</h2><p>Mi amas vin</p></article>
+      <article class="love-card"><h2>Latim</h2><p>Te amo</p></article>
+      <article class="love-card"><h2>Maori</h2><p>Aroha ahau ki a koe</p></article>
+      <article class="love-card"><h2>Havaiano</h2><p>Aloha wau ia oe</p></article>
+      <article class="love-card"><h2>Samoano</h2><p>Ou te alofa ia te oe</p></article>
+      <article class="love-card"><h2>Taitiano</h2><p>Ua here vau ia oe</p></article>
+      <article class="love-card"><h2>Fijiano</h2><p>Au domoni iko</p></article>
+      <article class="love-card"><h2>Afrikaans</h2><p>Ek is lief vir jou</p></article>
+      <article class="love-card"><h2>Húngaro</h2><p>Szeretlek</p></article>
+      <article class="love-card"><h2>Estoniano</h2><p>Ma armastan sind</p></article>
+      <article class="love-card"><h2>Letão</h2><p>Es tevi mīlu</p></article>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <p>&copy; Para <strong>Geovanna</strong>^^ — em todas as línguas do mundo</p>
+</footer>
+
+<script>
+const input = document.getElementById('searchInput');
+const cards = Array.from(document.querySelectorAll('.love-card'));
+const badge = document.getElementById('visibleCount');
+
+input.addEventListener('input', function(){
+  const q = this.value.toLowerCase().trim();
+  let visible = 0;
+  cards.forEach(c => {
+    const text = c.textContent.toLowerCase();
+    const match = !q || text.includes(q);
+    c.classList.toggle('hidden', !match);
+    if(match) visible++;
+  });
+  badge.textContent = visible;
+});
+
+// staggered entrance
+const observer = new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      e.target.style.animation = `fadeUp 0.5s ${e.target.dataset.delay||'0s'} both`;
+      observer.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.1 });
+
+cards.forEach((c,i)=>{
+  c.dataset.delay = (i * 0.03) + 's';
+  c.style.opacity = '0';
+  observer.observe(c);
+});
+</script>
 </body>
 </html>

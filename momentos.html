@@ -1,133 +1,401 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nosso Amor</title>
-    <link rel="icon" href="coracao.png" type="image/png">
-    <link rel="stylesheet" href="1year.css">
-    <link rel="stylesheet" href="pagina-carta.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nossos Momentos 💖 — Nosso Amor</title>
+  <link rel="icon" href="coracao.png" type="image/png">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .momentos-wrap {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 4rem 1.5rem 5rem;
+    }
+    .momentos-header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    /* ── Carousel ── */
+    .carousel-shell {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 28px;
+      box-shadow: 0 16px 56px var(--shadow);
+      overflow: hidden;
+      position: relative;
+    }
+    .carousel-shell::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--rose), var(--gold), var(--rose));
+      z-index: 2;
+    }
+
+    .carousel-window {
+      overflow: hidden;
+      position: relative;
+    }
+    .carousel-track {
+      display: flex;
+      transition: transform 0.55s cubic-bezier(.4,0,.2,1);
+    }
+    .slide {
+      min-width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2.5rem 2rem 2rem;
+      gap: 1.2rem;
+    }
+    .slide img {
+      max-height: 420px;
+      max-width: 100%;
+      border-radius: 16px;
+      object-fit: cover;
+      box-shadow: 0 12px 32px var(--shadow);
+      border: 2px solid rgba(232,98,122,0.2);
+    }
+    .slide-caption {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 1rem;
+      color: var(--soft);
+      text-align: center;
+      max-width: 500px;
+      line-height: 1.6;
+    }
+    .slide-date {
+      font-size: 0.72rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+
+    /* controls */
+    .carousel-controls {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      padding: 1.2rem 1.5rem;
+      background: rgba(255,255,255,0.4);
+      border-top: 1px solid var(--border);
+      flex-wrap: wrap;
+    }
+    .carousel-btn {
+      background: linear-gradient(135deg, var(--rose), var(--deep-rose));
+      border: none;
+      border-radius: 50%;
+      width: 2.6rem;
+      height: 2.6rem;
+      color: #fff;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s;
+      box-shadow: 0 4px 16px rgba(232,98,122,0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .carousel-btn:hover { transform: scale(1.1); box-shadow: 0 6px 24px rgba(232,98,122,0.45); }
+
+    .carousel-counter {
+      font-family: 'Playfair Display', serif;
+      font-size: 1rem;
+      color: var(--soft);
+      min-width: 60px;
+      text-align: center;
+    }
+    .autoplay-btn {
+      background: transparent;
+      border: 1px solid var(--rose);
+      border-radius: 99px;
+      padding: 0.35rem 1rem;
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--rose);
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s;
+    }
+    .autoplay-btn.is-on {
+      background: var(--rose);
+      color: #fff;
+    }
+
+    /* dots */
+    .dots {
+      display: flex;
+      gap: 6px;
+      justify-content: center;
+      padding-bottom: 1rem;
+    }
+    .dot {
+      width: 7px; height: 7px;
+      border-radius: 50%;
+      background: rgba(232,98,122,0.25);
+      transition: background 0.3s, transform 0.3s;
+    }
+    .dot.active {
+      background: var(--rose);
+      transform: scale(1.4);
+    }
+
+    /* final message */
+    .final-msg {
+      margin-top: 2.5rem;
+      background: linear-gradient(135deg, var(--rose), var(--deep-rose));
+      border-radius: 20px;
+      padding: 2.5rem 2rem;
+      text-align: center;
+      color: #fff;
+      position: relative;
+      overflow: hidden;
+    }
+    .final-msg::before {
+      content: '💖';
+      position: absolute;
+      font-size: 10rem;
+      opacity: 0.07;
+      top: 50%; left: 50%;
+      transform: translate(-50%,-50%);
+      pointer-events: none;
+    }
+    .final-msg h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.2rem, 3vw, 1.7rem);
+      margin-bottom: 1rem;
+      position: relative;
+    }
+    .final-msg p {
+      font-size: 0.95rem;
+      line-height: 1.8;
+      opacity: 0.9;
+      max-width: 600px;
+      margin: 0 auto;
+      position: relative;
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <h1><a href="Pagina-surpresa.html">Nossos</a> Anos de Nós, e <a href="carta1.html">Contando</a>...</h1>
-    </header>
 
-    <nav>
-        <ul>
-            <li><a href="index.html">Início</a></li>
-            <li><a href="sobre.html">Sobre nós</a></li>
-            <li><a href="momentos.html" aria-current="page">Nossos momentos</a></li>
-            <li><a href="Pagina-surpresa.html">Surpresa</a></li>
-            <li><a href="carta1.html">Carta</a></li>
-            <li><a href="eu-te-amo.html">Eu te amo</a></li>
-        </ul>
-    </nav>
+<header>
+  <h1><a href="Pagina-surpresa.html">Nossos</a> Anos de Nós, e <a href="carta1.html">Contando</a>...</h1>
+</header>
 
-    <div class="container">
-        <h1>Nossos momentos</h1>
-        <div class="timeline timeline-carousel" id="timelineCarousel">
-            <button class="carousel-btn prev" type="button" aria-label="Foto anterior">&#10094;</button>
-            <div class="timeline-window">
-                <div class="timeline-slides">
-            <!-- Momentos originais -->
-            <div class="event left">
-                <img src="primeiro.jpeg" alt="Melhor Momento 1">
-                <p>"Você criando coragem de me chamar 21/01/24."</p>
-            </div>
-            <div class="event right">
-                <img src="alianca.jpeg" alt="Melhor Momento 2">
-                <p>"Nossas alianças 18/03/24."</p>
-            </div>
-            <div class="event left">
-                <img src="textos.jpg" alt="Melhor Momento 3">
-                <p>"Você sendo incrível 09/03/24"</p>
-            </div>
-            <div class="event right">
-                <img src="textos2.jpg" alt="Melhor Momento 4">
-                <p>"Me fazendo parecer uma criança 09/04/24."</p>
-            </div>
-            <div class="event left">
-                <img src="seu-olhar.jpg" alt="Melhor Momento 5">
-                <p>"Seu olhar que acho lindo 08/04/24"</p>
-            </div>
-            <div class="event right">
-                <img src="primeira-foto-nossa.jpg" alt="Melhor Momento 6">
-                <p>"Fui embora até pulando nesse dia depois das alianças 18/03/24."</p>
-            </div>
-            <div class="event left">
-                <img src="primeiro-teamo.jpg" alt="Melhor Momento 7">
-                <p>"O Primeiro te amo que você estava passando por um momento difícil 09/04/24."</p>
-            </div>
-            <div class="event right">
-                <img src="anonovo2.jpg" alt="Melhor Momento 8">
-                <p>"Um dos melhores dias da minha vida 31/12/24."</p>
-            </div>
-            <div class="event left">
-                <img src="nosso-ano-no.jpg" alt="Melhor Momento 9">
-                <p>"A nossa ideia de tirar uma foto dessa maneira kkkk, foi difícil 31/12/24."</p>
-            </div>
-            <div class="event right">
-                <img src="meu-aniversario.jpg" alt="Melhor Momento 10">
-                <p>"O melhor aniversário que já tive na minha vida 24/10/24."</p>
-            </div>
+<nav>
+  <ul>
+    <li><a href="index.html">Início</a></li>
+    <li><a href="sobre.html">Sobre nós</a></li>
+    <li><a href="nossa_historia.html">Nossa história</a></li>
+    <li><a href="momentos.html" aria-current="page">Nossos momentos</a></li>
+    <li><a href="Pagina-surpresa.html">Surpresa</a></li>
+    <li><a href="carta1.html">Carta</a></li>
+    <li><a href="eu-te-amo.html">Eu te amo</a></li>
+  </ul>
+</nav>
 
-            <!-- Novos momentos adicionados -->
-            <div class="event left">
-                <img src="pes.jpg" alt="Melhor Momento 11">
-                <p>"Nossos Pés 21/04/25."</p>
-            </div>
-            <div class="event right">
-                <img src="praia.jpg" alt="Melhor Momento 12">
-                <p>"Uma foto que gostamos 18/04/25."</p>
-            </div>
-            <div class="event left">
-                <img src="dentes.jpg" alt="Melhor Momento 13">
-                <p>"Uma bem aleatória 21/04/25."</p>
-            </div>
-            <div class="event right">
-                <img src="indo.jpg" alt="Melhor Momento 14">
-                <p>"Eu morrendo de medo e você do meu lado 17/04/25."</p>
-            </div>
-            <div class="event left">
-                <img src="sol.jpg" alt="Melhor Momento 15">
-                <p>"O sol estava em disputa com você pra ver quem brilhava mais nesse dia 20/04/25."</p>
-            </div>
-            <div class="event right">
-                <img src="volta.jpg" alt="Melhor Momento 16">
-                <p>"Voltando e admirando as paisagens 21/04/25."</p>
-            </div>
-            <div class="event left">
-                <img src="us.jpg" alt="Melhor Momento 17">
-                <p>"Uma foto que você estava muito incrível 18/04/25."</p>
-            </div>
-            <div class="event right">
-                <img src="mulher.jpg" alt="Melhor Momento 18">
-                <p>"A minha foto preferida ao lado da minha pessoa preferida 20/04/25."</p>
-            </div>
-                </div>
-            </div>
-            <button class="carousel-btn next" type="button" aria-label="Próxima foto">&#10095;</button>
-            <div class="carousel-controls">
-                <div class="carousel-status" aria-live="polite">
-                    <span id="carouselCounter">1 / 18</span>
-                </div>
-                <button id="autoplayToggle" class="autoplay-toggle" type="button" aria-pressed="false">Auto play: desligado</button>
-            </div>
-        </div>
+<main class="page-content">
+  <div class="momentos-wrap">
 
-        <!-- Mensagem final -->
-        <div class="event full">
-            <h2>Você não é do meu mundo. Você é o meu mundo. 💌</h2>
-            <p>Obrigado por ser essa mulher incrível e linda que você é. Você é a minha pessoa preferida e mais importante do mundo. Eu te amo demais. Você é feita da mesma matéria que as estrelas: radiante na minha vida. Obrigado por tudo, Geovanna. Ou melhor, minha princesa, mo, amor, vida... ❤️</p>
-        </div>
+    <div class="momentos-header fade-up">
+      <p class="section-label">memórias</p>
+      <h2 class="section-title">Nossos momentos<br>favoritos 📸</h2>
     </div>
 
-    <script src="1year.js"></script>
-    <script src="momentos.js"></script>
+    <div class="carousel-shell fade-up-1">
+      <div class="carousel-window">
+        <div class="carousel-track" id="track">
 
-    <footer>
-        <p>&copy; Para Geovanna^^</p>
-    </footer>
+          <div class="slide">
+            <img src="primeiro.jpeg" alt="Momento 1">
+            <p class="slide-caption">"Você criando coragem de me chamar."</p>
+            <span class="slide-date">21 / 01 / 24</span>
+          </div>
+
+          <div class="slide">
+            <img src="alianca.jpeg" alt="Momento 2">
+            <p class="slide-caption">"Nossas alianças — o símbolo do que prometemos um ao outro."</p>
+            <span class="slide-date">18 / 03 / 24</span>
+          </div>
+
+          <div class="slide">
+            <img src="textos.jpg" alt="Momento 3">
+            <p class="slide-caption">"Você sendo incrível."</p>
+            <span class="slide-date">09 / 03 / 24</span>
+          </div>
+
+          <div class="slide">
+            <img src="textos2.jpg" alt="Momento 4">
+            <p class="slide-caption">"Me fazendo parecer uma criança."</p>
+            <span class="slide-date">09 / 04 / 24</span>
+          </div>
+
+          <div class="slide">
+            <img src="seu-olhar.jpg" alt="Momento 5">
+            <p class="slide-caption">"Seu olhar que eu acho lindo demais."</p>
+            <span class="slide-date">08 / 04 / 24</span>
+          </div>
+
+          <div class="slide">
+            <img src="primeira-foto-nossa.jpg" alt="Momento 6">
+            <p class="slide-caption">"Fui embora até pulando nesse dia depois das alianças."</p>
+            <span class="slide-date">18 / 03 / 24</span>
+          </div>
+
+          <div class="slide">
+            <img src="primeiro-teamo.jpg" alt="Momento 7">
+            <p class="slide-caption">"O primeiro te amo — você estava passando por um momento difícil."</p>
+            <span class="slide-date">09 / 04 / 24</span>
+          </div>
+
+          <div class="slide">
+            <img src="anonovo2.jpg" alt="Momento 8">
+            <p class="slide-caption">"Um dos melhores dias da minha vida."</p>
+            <span class="slide-date">31 / 12 / 24</span>
+          </div>
+
+          <div class="slide">
+            <img src="nosso-ano-no.jpg" alt="Momento 9">
+            <p class="slide-caption">"A nossa ideia de tirar uma foto dessa maneira kkk, foi difícil."</p>
+            <span class="slide-date">31 / 12 / 24</span>
+          </div>
+
+          <div class="slide">
+            <img src="meu-aniversario.jpg" alt="Momento 10">
+            <p class="slide-caption">"O melhor aniversário que já tive na minha vida."</p>
+            <span class="slide-date">24 / 10 / 24</span>
+          </div>
+
+          <div class="slide">
+            <img src="pes.jpg" alt="Momento 11">
+            <p class="slide-caption">"Nossos pés — juntos como sempre."</p>
+            <span class="slide-date">21 / 04 / 25</span>
+          </div>
+
+          <div class="slide">
+            <img src="praia.jpg" alt="Momento 12">
+            <p class="slide-caption">"Uma foto que os dois gostamos muito."</p>
+            <span class="slide-date">18 / 04 / 25</span>
+          </div>
+
+          <div class="slide">
+            <img src="dentes.jpg" alt="Momento 13">
+            <p class="slide-caption">"Uma bem aleatória — e uma das minhas favoritas."</p>
+            <span class="slide-date">21 / 04 / 25</span>
+          </div>
+
+          <div class="slide">
+            <img src="indo.jpg" alt="Momento 14">
+            <p class="slide-caption">"Eu morrendo de medo e você do meu lado."</p>
+            <span class="slide-date">17 / 04 / 25</span>
+          </div>
+
+          <div class="slide">
+            <img src="sol.jpg" alt="Momento 15">
+            <p class="slide-caption">"O sol estava em disputa com você pra ver quem brilhava mais nesse dia."</p>
+            <span class="slide-date">20 / 04 / 25</span>
+          </div>
+
+          <div class="slide">
+            <img src="volta.jpg" alt="Momento 16">
+            <p class="slide-caption">"Voltando e admirando as paisagens."</p>
+            <span class="slide-date">21 / 04 / 25</span>
+          </div>
+
+          <div class="slide">
+            <img src="us.jpg" alt="Momento 17">
+            <p class="slide-caption">"Uma foto que você estava muito incrível."</p>
+            <span class="slide-date">18 / 04 / 25</span>
+          </div>
+
+          <div class="slide">
+            <img src="mulher.jpg" alt="Momento 18">
+            <p class="slide-caption">"A minha foto preferida ao lado da minha pessoa preferida."</p>
+            <span class="slide-date">20 / 04 / 25</span>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="dots" id="dots"></div>
+
+      <div class="carousel-controls">
+        <button class="carousel-btn" id="prevBtn" aria-label="Anterior">&#10094;</button>
+        <span class="carousel-counter" id="counter">1 / 18</span>
+        <button class="carousel-btn" id="nextBtn" aria-label="Próximo">&#10095;</button>
+        <button class="autoplay-btn" id="autoBtn" aria-pressed="false">Auto play</button>
+      </div>
+    </div>
+
+    <div class="final-msg fade-up-3">
+      <h2>Você não é do meu mundo. Você é o meu mundo. 💌</h2>
+      <p>Obrigado por ser essa mulher incrível e linda que você é. Você é a minha pessoa preferida e mais importante do mundo. Eu te amo demais. Você é feita da mesma matéria que as estrelas: radiante na minha vida. Obrigado por tudo, Geovanna. Ou melhor, minha princesa, mor, amor, vida... ❤️</p>
+    </div>
+
+  </div>
+</main>
+
+<footer>
+  <p>&copy; Para <strong>Geovanna</strong>^^</p>
+</footer>
+
+<script>
+(function(){
+  const track   = document.getElementById('track');
+  const dotsEl  = document.getElementById('dots');
+  const counter = document.getElementById('counter');
+  const prevBtn = document.getElementById('prevBtn');
+  const nextBtn = document.getElementById('nextBtn');
+  const autoBtn = document.getElementById('autoBtn');
+
+  const slides = track.querySelectorAll('.slide');
+  const total  = slides.length;
+  let cur = 0, autoId = null, playing = false;
+
+  // build dots
+  slides.forEach((_,i)=>{
+    const d = document.createElement('span');
+    d.className = 'dot' + (i===0?' active':'');
+    d.addEventListener('click',()=>goTo(i));
+    dotsEl.appendChild(d);
+  });
+
+  function goTo(i){
+    cur = (i + total) % total;
+    track.style.transform = `translateX(-${cur * 100}%)`;
+    counter.textContent = `${cur+1} / ${total}`;
+    dotsEl.querySelectorAll('.dot').forEach((d,j)=>d.classList.toggle('active',j===cur));
+  }
+
+  prevBtn.addEventListener('click',()=>goTo(cur-1));
+  nextBtn.addEventListener('click',()=>goTo(cur+1));
+
+  autoBtn.addEventListener('click',()=>{
+    playing = !playing;
+    autoBtn.classList.toggle('is-on', playing);
+    autoBtn.setAttribute('aria-pressed', playing);
+    autoBtn.textContent = playing ? 'Auto play: ligado' : 'Auto play';
+    if(playing){ autoId = setInterval(()=>goTo(cur+1), 4500); }
+    else { clearInterval(autoId); }
+  });
+
+  // swipe
+  let startX = null;
+  track.addEventListener('touchstart', e=>{ startX = e.touches[0].clientX; });
+  track.addEventListener('touchend',   e=>{
+    if(startX===null) return;
+    const dx = e.changedTouches[0].clientX - startX;
+    if(Math.abs(dx) > 40){ goTo(cur + (dx < 0 ? 1 : -1)); }
+    startX = null;
+  });
+
+  goTo(0);
+})();
+</script>
 </body>
 </html>

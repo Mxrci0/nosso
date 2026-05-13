@@ -1,54 +1,197 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nosso Amor</title>
-    <link rel="icon" href="coracao.png" type="image/png">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Merriweather:wght@400;700&family=Nunito:wght@500;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="1year.css">
-    <link rel="stylesheet" href="pagina-carta.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carta 💖 — Nosso Amor</title>
+  <link rel="icon" href="coracao.png" type="image/png">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .carta-wrap {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 4rem 1.5rem 5rem;
+    }
+    .carta-header {
+      text-align: center;
+      margin-bottom: 3.5rem;
+    }
+
+    /* year cards */
+    .year-cards {
+      display: grid;
+      gap: 1.8rem;
+    }
+    .year-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      box-shadow: 0 12px 40px var(--shadow);
+      padding: 2.4rem 2.2rem;
+      position: relative;
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 2rem;
+      align-items: start;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .year-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 22px 56px var(--shadow);
+    }
+    .year-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--rose), var(--gold));
+    }
+
+    .year-num {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(3rem, 7vw, 5rem);
+      font-weight: 700;
+      color: var(--rose);
+      line-height: 1;
+      opacity: 0.18;
+      user-select: none;
+      min-width: 2.5ch;
+    }
+
+    .year-body {}
+    .year-badge {
+      display: inline-block;
+      background: linear-gradient(135deg, var(--deep-rose), var(--rose));
+      color: #fff;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 0.3rem 0.8rem;
+      border-radius: 99px;
+      margin-bottom: 0.8rem;
+    }
+    .year-body h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      color: var(--dark);
+      margin-bottom: 0.8rem;
+    }
+    .year-body p {
+      color: var(--soft);
+      line-height: 1.8;
+      font-size: 0.95rem;
+    }
+    .year-stats {
+      margin-top: 1rem;
+      display: flex;
+      gap: 1.2rem;
+      flex-wrap: wrap;
+    }
+    .year-stat {
+      background: rgba(255,255,255,0.55);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 0.5rem 0.9rem;
+      font-size: 0.78rem;
+      color: var(--soft);
+    }
+    .year-stat strong { color: var(--rose); font-weight: 700; }
+
+    /* intro card */
+    .card-intro {
+      text-align: center;
+    }
+    .card-intro .year-num { opacity: 0.08; position: absolute; right: 1.5rem; bottom: -0.5rem; font-size: 8rem; }
+    .card-intro h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.6rem;
+      color: var(--dark);
+      margin-bottom: 0.8rem;
+    }
+    .card-intro p { color: var(--soft); line-height: 1.8; }
+
+    @media (max-width: 500px){
+      .year-card { grid-template-columns: 1fr; }
+      .year-num { display: none; }
+    }
+  </style>
 </head>
 <body>
-    
-    <header>
-        <h1>Nossos anos de Nós, e <a href="carta1.html">Contando</a>...</h1>
-    </header>
-    
-    <nav>
-        <ul>
-            <li><a href="index.html">Início</a></li>
-            <li><a href="sobre.html">Sobre nós</a></li>
-            <li><a href="momentos.html">Nossos momentos</a></li>
-            <li><a href="Pagina-surpresa.html">Surpresa</a></li>
-            <li><a href="carta1.html" aria-current="page">Carta</a></li>
-            <li><a href="eu-te-amo.html">Eu te amo</a></li>
-        </ul>
-    </nav>
 
-    <div class="container carta-cards">
-        <article class="year-card year-intro">
-            <h2>Nosso comeco</h2>
-            <p>Cada momento ao seu lado e unico e inesquecivel. Meu mundo tem mais cor com a sua presenca.</p>
-        </article>
+<header>
+  <h1>Nossos Anos de Nós, e <a href="carta1.html">Contando</a>...</h1>
+</header>
 
-        <article class="year-card year-one">
-            <h2>1 ano</h2>
-            <p>Ja se passou 1 ano - 365 dias, 525.600 minutos, 31.536.000 segundos - e eu te amo mais a cada instante. Voce e a pessoa mais importante da minha vida, minha princesa. Que esse seja o primeiro de muitos anos ao seu lado. Eu te amo demais! ❤️</p>
-        </article>
+<nav>
+  <ul>
+    <li><a href="index.html">Início</a></li>
+    <li><a href="sobre.html">Sobre nós</a></li>
+    <li><a href="nossa_historia.html">Nossa história</a></li>
+    <li><a href="momentos.html">Nossos momentos</a></li>
+    <li><a href="Pagina-surpresa.html">Surpresa</a></li>
+    <li><a href="carta1.html" aria-current="page">Carta</a></li>
+    <li><a href="eu-te-amo.html">Eu te amo</a></li>
+  </ul>
+</nav>
 
-        <article class="year-card year-two">
-            <h2>2 anos</h2>
-            <p>Ja se passaram 2 anos - 730 dias, 1.051.200 minutos, 63.072.000 segundos - e eu te amo mais a cada instante. Voce e a pessoa mais importante da minha vida, minha princesa. Que esse seja o segundo de muitos anos ao seu lado. Eu te amo demais! ❤️</p>
-        </article>
+<main class="page-content">
+  <div class="carta-wrap">
+
+    <div class="carta-header fade-up">
+      <p class="section-label">nossa jornada</p>
+      <h2 class="section-title">Anos que passaram,<br>amor que cresceu 💌</h2>
     </div>
 
-  <script src="1year.js"></script>
-  <footer>
-    <p>&copy; Para Geovanna^^</p>
-</footer>
-</body>
+    <div class="year-cards">
 
+      <!-- intro -->
+      <div class="year-card card-intro fade-up-1" style="position:relative;overflow:hidden;">
+        <div style="width:100%">
+          <h2>Nosso começo ✨</h2>
+          <p>Cada momento ao seu lado é único e inesquecível. Meu mundo tem mais cor com a sua presença — e eu jamais me cansarei de estar aqui, do seu lado.</p>
+        </div>
+        <span class="year-num" style="position:absolute;right:1.5rem;bottom:-1rem;font-size:8rem;opacity:0.07;">∞</span>
+      </div>
+
+      <!-- 1 ano -->
+      <div class="year-card fade-up-2">
+        <span class="year-num">1</span>
+        <div class="year-body">
+          <span class="year-badge">Primeiro ano 🎉</span>
+          <h2>365 dias amando você</h2>
+          <p>Já se passou 1 ano — e eu te amo mais a cada instante. Você é a pessoa mais importante da minha vida, minha princesa. Que esse seja o primeiro de muitos anos ao seu lado. Eu te amo demais! ❤️</p>
+          <div class="year-stats">
+            <div class="year-stat"><strong>365</strong> dias</div>
+            <div class="year-stat"><strong>525.600</strong> minutos</div>
+            <div class="year-stat"><strong>31.536.000</strong> segundos</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2 anos -->
+      <div class="year-card fade-up-3">
+        <span class="year-num">2</span>
+        <div class="year-body">
+          <span class="year-badge">Segundo ano 💖</span>
+          <h2>730 dias amando você</h2>
+          <p>Já se passaram 2 anos — e eu te amo mais a cada instante. Você é a pessoa mais importante da minha vida, minha princesa. Que esse seja o segundo de muitos anos ao seu lado. Eu te amo demais! ❤️</p>
+          <div class="year-stats">
+            <div class="year-stat"><strong>730</strong> dias</div>
+            <div class="year-stat"><strong>1.051.200</strong> minutos</div>
+            <div class="year-stat"><strong>63.072.000</strong> segundos</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</main>
+
+<footer>
+  <p>&copy; Para <strong>Geovanna</strong>^^</p>
+</footer>
+
+</body>
 </html>

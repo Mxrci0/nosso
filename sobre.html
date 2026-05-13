@@ -1,53 +1,178 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nosso Amor</title>
-    <link rel="icon" href="coracao.png" type="image/png">
-    <link rel="stylesheet" href="1year.css">
-    <link rel="stylesheet" href="pagina-carta.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sobre Nós 💖 — Nosso Amor</title>
+  <link rel="icon" href="coracao.png" type="image/png">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .sobre-wrap {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 4rem 1.5rem 5rem;
+    }
+    .sobre-header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+    .sobre-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      align-items: start;
+    }
+    @media (max-width: 640px){
+      .sobre-grid { grid-template-columns: 1fr; }
+    }
+
+    /* carta */
+    .carta-box {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      box-shadow: 0 12px 40px var(--shadow);
+      padding: 2.4rem 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .carta-box::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--rose), var(--gold));
+    }
+    .carta-box h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+      color: var(--dark);
+      margin-bottom: 1.4rem;
+    }
+    .carta-box h2 a {
+      color: var(--rose);
+      text-decoration: none;
+    }
+    .carta-box p {
+      color: var(--soft);
+      line-height: 1.8;
+      margin-bottom: 0.7rem;
+      font-size: 0.95rem;
+    }
+    .carta-box p:last-child { margin-bottom: 0; color: var(--dark); font-weight: 700; }
+
+    /* foto */
+    .foto-box {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+    }
+    .foto-frame {
+      width: 100%;
+      max-width: 340px;
+      border-radius: 20px;
+      overflow: hidden;
+      border: 3px solid rgba(232,98,122,0.3);
+      box-shadow: 0 16px 48px var(--shadow);
+      position: relative;
+    }
+    .foto-frame img {
+      width: 100%;
+      display: block;
+      object-fit: cover;
+    }
+    .foto-caption {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 0.9rem;
+      color: var(--soft);
+      text-align: center;
+    }
+
+    /* decorative quote */
+    .quote-strip {
+      margin-top: 3rem;
+      background: linear-gradient(135deg, var(--rose), var(--deep-rose));
+      border-radius: 20px;
+      padding: 2.5rem 2rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .quote-strip::before {
+      content: '❤';
+      position: absolute;
+      font-size: 12rem;
+      color: rgba(255,255,255,0.06);
+      top: 50%; left: 50%;
+      transform: translate(-50%,-50%);
+      pointer-events: none;
+    }
+    .quote-strip p {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.1rem, 3vw, 1.6rem);
+      color: #fff;
+      font-style: italic;
+      position: relative;
+    }
+  </style>
 </head>
 <body>
-    
-    <header>
-        <h1><a href="Pagina-surpresa.html">Nossos</a> Anos de Nós, e <a href="carta1.html">Contando</a>...</h1>
-    </header>
-    <nav>
-        <ul>
-            <li><a href="index.html">Início</a></li>
-            <li><a href="sobre.html" aria-current="page">Sobre nós</a></li>
-            <li><a href="momentos.html">Nossos momentos</a></li>
-            <li><a href="Pagina-surpresa.html">Surpresa</a></li>
-            <li><a href="carta1.html">Carta</a></li>
-            <li><a href="eu-te-amo.html">Eu te amo</a></li>
-        </ul>
-    </nav>
 
-    <main class="container">
-        <div class="carta">
-            <h2>Para minha paixão <a href="pagina-carta.html">💌</a>
-            </h2>
-            <p>É quem imaginava que estariamos juntos</p>
-            <p>desde da primeria vez que te vi soube que era você</p>
-            <p>você sempre foi alguem que admirei mesmo que de longe,</p>
-            <p>nunca imaginei que estaria vivendo isso com você</p>
-            <p>o meu eu do passado nem acreditaria se soubesse,</p>
-            <p>você veio me dando um novo motivo para mim, para mim melhorar tudo isso foi graças a sua companhia, tudo a você.</p>
-            <p>Por mas que temos nossa diferenças, eu tenho a certeza de que é voce quem eu desejo e quero para vida somente você </p>
-            <p>a cada dia que passa eu me apaixono ainda mais pelo seu jeitinho de ser, o seu humor, seu sorriso, seu cheiro, tudo em voce me atrai tudo isso mexe demais comigo, me deixando boiolinha por você</p>
-            <p>Eu te amo demais💖💖💖</p>
-            <p>Seu eterno apaixonado. ❤️</p>
-        </div>
-        <div class="foto">
-            <img src="primeira-foto-nossa.jpg" alt="Nossa Foto">
-        </div>
-    </main>
+<header>
+  <h1><a href="Pagina-surpresa.html">Nossos</a> Anos de Nós, e <a href="carta1.html">Contando</a>...</h1>
+</header>
 
-    <script src="1year.js"></script>
-    <footer>
-        <p>&copy; Para Geovanna^^</p>
-    </footer>
+<nav>
+  <ul>
+    <li><a href="index.html">Início</a></li>
+    <li><a href="sobre.html" aria-current="page">Sobre nós</a></li>
+    <li><a href="nossa_historia.html">Nossa história</a></li>
+    <li><a href="momentos.html">Nossos momentos</a></li>
+    <li><a href="Pagina-surpresa.html">Surpresa</a></li>
+    <li><a href="carta1.html">Carta</a></li>
+    <li><a href="eu-te-amo.html">Eu te amo</a></li>
+  </ul>
+</nav>
+
+<main class="page-content">
+  <div class="sobre-wrap">
+
+    <div class="sobre-header fade-up">
+      <p class="section-label">sobre nós</p>
+      <h2 class="section-title">A nossa história<br>em palavras 💌</h2>
+    </div>
+
+    <div class="sobre-grid">
+      <div class="carta-box fade-up-1">
+        <h2>Para minha paixão <a href="pagina-carta.html">💌</a></h2>
+        <p>É quem imaginava que estaríamos juntos?</p>
+        <p>Desde da primeira vez que te vi soube que era você. Você sempre foi alguém que admirei mesmo que de longe, nunca imaginei que estaria vivendo isso com você.</p>
+        <p>O meu eu do passado nem acreditaria se soubesse. Você veio me dando um novo motivo para mim, para mim melhorar — tudo isso foi graças à sua companhia, tudo a você.</p>
+        <p>Por mais que temos nossas diferenças, eu tenho a certeza de que é você quem eu desejo e quero para a vida — somente você.</p>
+        <p>A cada dia que passa eu me apaixono ainda mais pelo seu jeitinho de ser, o seu humor, seu sorriso, seu cheiro, tudo em você me atrai — tudo isso mexe demais comigo, me deixando completamente apaixonado por você.</p>
+        <p>Eu te amo demais 💖💖💖 — Seu eterno apaixonado. ❤️</p>
+      </div>
+
+      <div class="foto-box fade-up-2">
+        <div class="foto-frame">
+          <img src="primeira-foto-nossa.jpg" alt="Nossa primeira foto juntos">
+        </div>
+        <p class="foto-caption">"A foto que guardo com todo meu coração."</p>
+      </div>
+    </div>
+
+    <div class="quote-strip fade-up-3">
+      <p>"Você não é do meu mundo. Você é o meu mundo." 🌎</p>
+    </div>
+
+  </div>
+</main>
+
+<footer>
+  <p>&copy; Para <strong>Geovanna</strong>^^</p>
+</footer>
 
 </body>
 </html>

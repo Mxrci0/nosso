@@ -1,82 +1,326 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nosso Amor</title>
-    <link rel="icon" href="coracao.png" type="image/png">
-    <link rel="stylesheet" href="1year.css">
-    <link rel="stylesheet" href="pagina-carta.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nosso Amor 💖</title>
+  <link rel="icon" href="coracao.png" type="image/png">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* ── Hero ── */
+    .home-hero {
+      min-height: 55vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 4rem 2rem 3rem;
+      position: relative;
+    }
+    .hero-eyebrow {
+      font-size: 0.75rem;
+      letter-spacing: 0.4em;
+      text-transform: uppercase;
+      color: var(--rose);
+      margin-bottom: 1rem;
+    }
+    .hero-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.4rem, 7vw, 5rem);
+      font-weight: 700;
+      color: var(--dark);
+      line-height: 1.08;
+    }
+    .hero-title em { color: var(--rose); font-style: italic; }
+    .hero-sub {
+      margin-top: 1.2rem;
+      color: var(--soft);
+      font-size: 1rem;
+      max-width: 420px;
+    }
+    .hero-btn { margin-top: 2rem; }
+
+    /* floating hearts */
+    .hearts-bg {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+      overflow: hidden;
+    }
+    .hf {
+      position: absolute;
+      font-size: 1.3rem;
+      opacity: 0;
+      animation: floatUp var(--d) ease-in var(--dl) infinite;
+    }
+    @keyframes floatUp {
+      0%   { opacity: 0; transform: translateY(0) rotate(var(--r,0deg)); }
+      15%  { opacity: 0.3; }
+      85%  { opacity: 0.15; }
+      100% { opacity: 0; transform: translateY(-110vh) rotate(var(--r,0deg)); }
+    }
+
+    /* ── Counter card ── */
+    .counter-wrap {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 0 1.5rem 5rem;
+    }
+    .counter-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      box-shadow: 0 16px 48px var(--shadow);
+      padding: 2.5rem 2rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .counter-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--rose), var(--gold), var(--rose));
+    }
+    .counter-eyebrow {
+      font-size: 0.72rem;
+      letter-spacing: 0.4em;
+      text-transform: uppercase;
+      color: var(--soft);
+      margin-bottom: 0.6rem;
+    }
+    .counter-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.4rem, 3vw, 2rem);
+      color: var(--dark);
+      margin-bottom: 0.4rem;
+    }
+    .counter-lead {
+      color: var(--soft);
+      font-size: 0.9rem;
+      margin-bottom: 2rem;
+    }
+    .counter-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0.8rem;
+      margin-bottom: 1.8rem;
+    }
+    @media (max-width: 500px) {
+      .counter-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    .counter-item {
+      background: rgba(255,255,255,0.6);
+      border-radius: 16px;
+      padding: 1.2rem 0.5rem;
+      border: 1px solid var(--border);
+    }
+    .counter-value {
+      display: block;
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 5vw, 2.8rem);
+      font-weight: 700;
+      color: var(--rose);
+      line-height: 1;
+    }
+    .counter-label {
+      display: block;
+      font-size: 0.72rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--soft);
+      margin-top: 0.3rem;
+    }
+    .counter-total {
+      font-size: 0.85rem;
+      color: var(--soft);
+      font-style: italic;
+      margin-bottom: 1.8rem;
+    }
+
+    /* progress bar */
+    .progress-block { margin-top: 1rem; }
+    .progress-head {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 0.5rem;
+    }
+    .progress-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1rem;
+      color: var(--dark);
+      font-style: italic;
+    }
+    .progress-pct {
+      font-weight: 700;
+      color: var(--rose);
+      font-size: 0.9rem;
+    }
+    .progress-track {
+      height: 10px;
+      background: rgba(232,98,122,0.12);
+      border-radius: 99px;
+      overflow: hidden;
+    }
+    .progress-bar {
+      height: 100%;
+      background: linear-gradient(90deg, var(--rose), var(--gold));
+      border-radius: 99px;
+      width: 0;
+      transition: width 1.8s cubic-bezier(.22,1,.36,1);
+    }
+    .progress-text {
+      font-size: 0.8rem;
+      color: var(--soft);
+      margin-top: 0.5rem;
+    }
+    .counter-since {
+      margin-top: 1.5rem;
+      font-size: 0.72rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+  </style>
 </head>
 <body>
-    
-    <header>
-        <h1><a href="Pagina-surpresa.html">Nossos</a> Anos de Nós, e <a href="carta1.html">Contando</a>...</h1>
-    </header>
-    
-    <nav>
-        <ul>
-            <li><a href="index.html" aria-current="page">Início</a></li>
-            <li><a href="sobre.html">Sobre nós</a></li>
-            <li><a href="momentos.html">Nossos momentos</a></li>
-            <li><a href="Pagina-surpresa.html">Surpresa</a></li>
-            <li><a href="carta1.html">Carta</a></li>
-            <li><a href="eu-te-amo.html">Eu te amo</a></li>
-        </ul>
-    </nav>
-    
-    <main>
-        <section>
-            <h2>Obrigado minha Vida</h2>
-            <p>Só quero que você se sinta amada ^^</p>
-            <a class="love-page-button" href="eu-te-amo.html">Ver "Eu te amo" em varias linguas</a>
-        </section>
-        
-        <div class="container counter-card">
-            <h1>Nosso Relacionamento</h1>
-            <p class="counter-lead">Estamos juntos há:</p>
 
-            <div class="counter-grid" aria-label="Contador de tempo juntos">
-                <div class="counter-item">
-                    <span id="counterDays" class="counter-value">0</span>
-                    <span class="counter-label">dias</span>
-                </div>
-                <div class="counter-item">
-                    <span id="counterHours" class="counter-value">0</span>
-                    <span class="counter-label">horas</span>
-                </div>
-                <div class="counter-item">
-                    <span id="counterMinutes" class="counter-value">0</span>
-                    <span class="counter-label">minutos</span>
-                </div>
-                <div class="counter-item">
-                    <span id="counterSeconds" class="counter-value">0</span>
-                    <span class="counter-label">segundos</span>
-                </div>
-            </div>
+<div class="hearts-bg" id="hbg"></div>
 
-            <p id="counterTotal" class="counter-total">Calculando detalhes...</p>
+<header>
+  <h1><a href="Pagina-surpresa.html">Nossos</a> Anos de Nós, e <a href="carta1.html">Contando</a>...</h1>
+</header>
 
-            <div class="counter-progress-block" aria-label="Progresso até 3 anos">
-                <div class="counter-progress-head">
-                    <span id="counterProgressTitle" class="counter-progress-title">Rumo aos 2 anos</span>
-                    <span id="counterProgressPercent" class="counter-progress-percent">0%</span>
-                </div>
-                <div class="counter-progress-track">
-                    <div id="counterProgressBar" class="counter-progress-bar"></div>
-                </div>
-                <p id="counterProgressText" class="counter-progress-text">Calculando progresso...</p>
-            </div>
+<nav>
+  <ul>
+    <li><a href="index.html" aria-current="page">Início</a></li>
+    <li><a href="sobre.html">Sobre nós</a></li>
+    <li><a href="nossa_historia.html">Nossa história</a></li>
+    <li><a href="momentos.html">Nossos momentos</a></li>
+    <li><a href="Pagina-surpresa.html">Surpresa</a></li>
+    <li><a href="carta1.html">Carta</a></li>
+    <li><a href="eu-te-amo.html">Eu te amo</a></li>
+  </ul>
+</nav>
 
-            <p id="counter" class="counter-legacy">Calculando...</p>
-            <p class="counter-since">Desde 22/04/2024</p>
+<main>
+  <section class="home-hero">
+    <p class="hero-eyebrow fade-up">Para Geovanna, com todo meu amor 💖</p>
+    <h1 class="hero-title fade-up-1">Obrigado,<br><em>minha vida</em></h1>
+    <p class="hero-sub fade-up-2">Só quero que você se sinta amada todos os dias. Cada segundo ao seu lado vale uma eternidade.</p>
+    <div class="hero-btn fade-up-3">
+      <a class="btn" href="eu-te-amo.html">Ver "Eu te amo" em várias línguas ❤️</a>
+    </div>
+  </section>
+
+  <div class="counter-wrap">
+    <div class="counter-card fade-up">
+      <p class="counter-eyebrow">nosso relacionamento</p>
+      <h2 class="counter-title">Estamos juntos há...</h2>
+      <p class="counter-lead">cada segundo conta 🌹</p>
+
+      <div class="counter-grid" aria-label="Contador de tempo juntos">
+        <div class="counter-item">
+          <span id="counterDays"   class="counter-value">0</span>
+          <span class="counter-label">dias</span>
         </div>
-    </main>
+        <div class="counter-item">
+          <span id="counterHours"  class="counter-value">0</span>
+          <span class="counter-label">horas</span>
+        </div>
+        <div class="counter-item">
+          <span id="counterMinutes" class="counter-value">0</span>
+          <span class="counter-label">minutos</span>
+        </div>
+        <div class="counter-item">
+          <span id="counterSeconds" class="counter-value">0</span>
+          <span class="counter-label">segundos</span>
+        </div>
+      </div>
 
-    <footer>
-        <p>&copy; Para Geovanna, meu amor ^^</p>
-    </footer>
+      <p id="counterTotal" class="counter-total">Calculando...</p>
 
-    <script src="1year.js"></script>
+      <div class="progress-block">
+        <div class="progress-head">
+          <span id="progressTitle" class="progress-title">Rumo aos 2 anos</span>
+          <span id="progressPct"   class="progress-pct">0%</span>
+        </div>
+        <div class="progress-track">
+          <div id="progressBar" class="progress-bar"></div>
+        </div>
+        <p id="progressText" class="progress-text">Calculando progresso...</p>
+      </div>
+
+      <p class="counter-since">Desde 22 / 04 / 2024</p>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <p>&copy; Para <strong>Geovanna</strong>, meu amor ^^</p>
+</footer>
+
+<script>
+// floating hearts
+(function(){
+  const c = document.getElementById('hbg');
+  const e = ['❤️','💖','💕','🌹','💗','💓','✨','🥀'];
+  for(let i=0;i<20;i++){
+    const el=document.createElement('span');
+    el.className='hf';
+    el.textContent=e[Math.floor(Math.random()*e.length)];
+    el.style.cssText=`left:${Math.random()*100}vw;bottom:-5vh;--d:${8+Math.random()*14}s;--dl:${Math.random()*10}s;--r:${Math.random()*20-10}deg`;
+    c.appendChild(el);
+  }
+})();
+
+// counter
+(function(){
+  const start = new Date('2024-04-22T00:00:00');
+
+  function pad(n){ return String(n).padStart(2,'0'); }
+
+  function update(){
+    const now = new Date();
+    const diff = Math.floor((now - start) / 1000);
+    if(diff < 0) return;
+
+    const days    = Math.floor(diff / 86400);
+    const hours   = Math.floor((diff % 86400) / 3600);
+    const minutes = Math.floor((diff % 3600) / 60);
+    const seconds = diff % 60;
+
+    document.getElementById('counterDays').textContent    = days.toLocaleString('pt-BR');
+    document.getElementById('counterHours').textContent   = pad(hours);
+    document.getElementById('counterMinutes').textContent = pad(minutes);
+    document.getElementById('counterSeconds').textContent = pad(seconds);
+
+    const totalMonths = Math.floor(days/30);
+    const totalYears  = (days/365).toFixed(2);
+    document.getElementById('counterTotal').textContent =
+      `${days.toLocaleString('pt-BR')} dias · ${totalMonths} meses · ${totalYears} anos`;
+
+    // progress to next milestone
+    const years = days / 365;
+    let nextMilestone, label;
+    if(years < 2){ nextMilestone = 730; label = 'Rumo aos 2 anos'; }
+    else if(years < 3){ nextMilestone = 1095; label = 'Rumo aos 3 anos'; }
+    else { nextMilestone = Math.ceil(years+1)*365; label = `Rumo aos ${Math.ceil(years+1)} anos`; }
+
+    const pct = Math.min((days / nextMilestone)*100, 100).toFixed(1);
+    document.getElementById('progressTitle').textContent = label;
+    document.getElementById('progressPct').textContent   = pct + '%';
+    document.getElementById('progressBar').style.width   = pct + '%';
+    document.getElementById('progressText').textContent  =
+      `Faltam ${(nextMilestone - days).toLocaleString('pt-BR')} dias para o próximo marco 🌟`;
+  }
+
+  update();
+  setInterval(update, 1000);
+})();
+</script>
 </body>
 </html>
